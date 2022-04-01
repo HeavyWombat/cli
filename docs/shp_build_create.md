@@ -26,6 +26,7 @@ shp build create <name> [flags]
       --output-image string                   image employed during the building process
       --output-image-annotation stringArray   specify a set of key-value pairs that correspond to annotations to set on the output image (default [])
       --output-image-label stringArray        specify a set of key-value pairs that correspond to labels to set on the output image (default [])
+      --source-bundle-image string            source bundle image location, e.g. ghcr.io/shipwright-io/sample-go/source-bundle:latest
       --source-context-dir string             use a inner directory as context directory
       --source-credentials-secret string      name of the secret with git repository credentials
       --source-revision string                git repository source revision

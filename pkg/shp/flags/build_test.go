@@ -19,10 +19,11 @@ func TestBuildSpecFromFlags(t *testing.T) {
 	buildStrategyKind := buildv1alpha1.ClusterBuildStrategyKind
 	expected := &buildv1alpha1.BuildSpec{
 		Source: buildv1alpha1.Source{
-			Credentials: &credentials,
-			URL:         "https://some.url",
-			Revision:    pointer.String("some-rev"),
-			ContextDir:  pointer.String("some-contextdir"),
+			Credentials:     &credentials,
+			URL:             "https://some.url",
+			Revision:        pointer.String("some-rev"),
+			ContextDir:      pointer.String("some-contextdir"),
+			BundleContainer: &buildv1alpha1.BundleContainer{},
 		},
 		Strategy: &buildv1alpha1.Strategy{
 			Name:       "strategy-name",

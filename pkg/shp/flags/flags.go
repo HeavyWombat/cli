@@ -30,6 +30,8 @@ const (
 	SourceContextDirFlag = "source-context-dir"
 	// SourceCredentialsSecretFlag command-line flag.
 	SourceCredentialsSecretFlag = "source-credentials-secret"
+	// SourceBundleImage command-line flag
+	SourceBundleImage = "source-bundle-image"
 	// StrategyAPIVersionFlag command-line flag.
 	StrategyAPIVersionFlag = "strategy-apiversion"
 	// StrategyKindFlag command-line flag.
@@ -77,6 +79,12 @@ func sourceFlags(flags *pflag.FlagSet, source *buildv1alpha1.Source) {
 		SourceCredentialsSecretFlag,
 		"",
 		"name of the secret with git repository credentials",
+	)
+	flags.StringVar(
+		&source.BundleContainer.Image,
+		SourceBundleImage,
+		"",
+		"source bundle image location, e.g. ghcr.io/shipwright-io/sample-go/source-bundle:latest",
 	)
 }
 
